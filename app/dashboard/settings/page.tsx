@@ -14,10 +14,11 @@ import {
   ShieldAlert,
   RotateCcw,
   Loader2,
-  CheckCircle
+  CheckCircle,
+  Archive
 } from "lucide-react";
 
-type ActiveTab = "account" | "ai" | "appearance" | "diagnostics";
+type ActiveTab = "account" | "ai" | "appearance" | "diagnostics" | "legacy";
 
 export default function SettingsPage() {
   const { 
@@ -138,6 +139,18 @@ export default function SettingsPage() {
             >
               <Database className="w-4 h-4 shrink-0" />
               Diagnostics
+            </button>
+
+            <button
+              onClick={() => setActiveTab("legacy")}
+              className={`w-full text-left px-3 py-2 rounded-lg font-heading text-xs font-bold transition-all flex items-center gap-2.5 shrink-0 ${
+                activeTab === "legacy" 
+                  ? "bg-primary/10 text-primary" 
+                  : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+              }`}
+            >
+              <Archive className="w-4 h-4 shrink-0" />
+              Removed Features
             </button>
 
           </nav>
@@ -388,6 +401,47 @@ export default function SettingsPage() {
                       <RotateCcw className="w-3.5 h-3.5" />
                       Reset Now
                     </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Legacy Tab */}
+            {activeTab === "legacy" && (
+              <div className="space-y-6 animate-in fade-in slide-in-from-right-3 duration-200">
+                <div>
+                  <h3 className="font-heading text-lg font-bold text-foreground">Removed Features</h3>
+                  <p className="text-xs text-muted-foreground mt-1">Features removed to support the free Firebase Spark plan.</p>
+                </div>
+
+                <div className="h-px bg-border"></div>
+
+                <div className="space-y-4">
+                  <div className="p-4 bg-[#1c1b1d]/20 rounded-xl border border-border space-y-2">
+                    <p className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                      Server-Side Rendering (SSR)
+                    </p>
+                    <p className="text-[10px] text-muted-foreground leading-relaxed">
+                      Task details and edit pages were previously rendered on the server on-demand. To avoid triggering paid Cloud Functions, they are now fully statically exported and client-rendered.
+                    </p>
+                  </div>
+                  
+                  <div className="p-4 bg-[#1c1b1d]/20 rounded-xl border border-border space-y-2">
+                    <p className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                      Clean URL Routing
+                    </p>
+                    <p className="text-[10px] text-muted-foreground leading-relaxed">
+                      Dynamic path segments (e.g., /tasks/[id]) have been removed. The app now relies on query parameters (e.g., /tasks/view?id=...) or client-side state (modals) to display specific task details, ensuring Next.js outputs a static site.
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-[#1c1b1d]/20 rounded-xl border border-border space-y-2">
+                    <p className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                      SEO for Specific Tasks
+                    </p>
+                    <p className="text-[10px] text-muted-foreground leading-relaxed">
+                      Because task pages are no longer generated individually on the server, search engines will only see the static skeleton of these pages.
+                    </p>
                   </div>
                 </div>
               </div>
