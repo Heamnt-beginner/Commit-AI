@@ -1,0 +1,79 @@
+[debug] [2026-06-30T06:51:07.243Z] ----------------------------------------------------------------------
+[debug] [2026-06-30T06:51:07.245Z] Command:       D:\BABU\Node.js\node.exe C:\Users\lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2026-06-30T06:51:07.245Z] CLI Version:   15.22.3
+[debug] [2026-06-30T06:51:07.245Z] Platform:      win32
+[debug] [2026-06-30T06:51:07.245Z] Node Version:  v24.18.0
+[debug] [2026-06-30T06:51:07.245Z] Detected Agent: unknown
+[debug] [2026-06-30T06:51:07.245Z] Time:          Tue Jun 30 2026 12:21:07 GMT+0530 (India Standard Time)
+[debug] [2026-06-30T06:51:07.245Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-30T06:51:19.404Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-30T06:51:19.404Z] > authorizing via signed-in user (jaguargamingcoder@gmail.com)
+[debug] [2026-06-30T06:51:19.404Z] [iam] checking project commit-ai-vibe for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-06-30T06:51:19.405Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:19.405Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:19.405Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/commit-ai-vibe:testIamPermissions [none]
+[debug] [2026-06-30T06:51:19.405Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/commit-ai-vibe:testIamPermissions  x-goog-user-project=commit-ai-vibe
+[debug] [2026-06-30T06:51:19.405Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/commit-ai-vibe:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-30T06:51:21.143Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/commit-ai-vibe:testIamPermissions 200
+[debug] [2026-06-30T06:51:21.144Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/commit-ai-vibe:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-06-30T06:51:21.144Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:21.144Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:21.144Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/commit-ai-vibe [none]
+[debug] [2026-06-30T06:51:22.172Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/commit-ai-vibe 200
+[debug] [2026-06-30T06:51:22.172Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/commit-ai-vibe {"projectId":"commit-ai-vibe","projectNumber":"82901522745","displayName":"commit-ai-vibe","name":"projects/commit-ai-vibe","resources":{"hostingSite":"commit-ai-vibe"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_fc97f96c-deff-432e-a096-d33fdac9fbb0"}
+[debug] [2026-06-30T06:51:24.106Z] defaultcredentials: writing to file C:\Users\lenovo\AppData\Roaming\firebase\jaguargamingcoder_gmail_com_application_default_credentials.json
+[debug] [2026-06-30T06:51:24.107Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:24.107Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:24.107Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/commit-ai-vibe/sites pageToken=&pageSize=10
+[debug] [2026-06-30T06:51:25.634Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/commit-ai-vibe/sites 200
+[debug] [2026-06-30T06:51:25.635Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/commit-ai-vibe/sites {"sites":[{"name":"projects/commit-ai-vibe/sites/commit-ai-vibe","defaultUrl":"https://commit-ai-vibe.web.app","appId":"1:82901522745:web:2e46525ae45eb62f5a70e8","type":"DEFAULT_SITE"}]}
+[debug] [2026-06-30T06:51:25.635Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:25.635Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:25.635Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:82901522745:web:2e46525ae45eb62f5a70e8/config [none]
+[debug] [2026-06-30T06:51:27.717Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:82901522745:web:2e46525ae45eb62f5a70e8/config 200
+[debug] [2026-06-30T06:51:27.717Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:82901522745:web:2e46525ae45eb62f5a70e8/config {"projectId":"commit-ai-vibe","appId":"1:82901522745:web:2e46525ae45eb62f5a70e8","storageBucket":"commit-ai-vibe.firebasestorage.app","apiKey":"AIzaSyB1wFzx0aVIVt-d64VTcX1qTyOHGFDWJPg","authDomain":"commit-ai-vibe.firebaseapp.com","messagingSenderId":"82901522745","measurementId":"G-PZ5CKJ0JWY","projectNumber":"82901522745","version":"2"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 16.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2026-06-30T06:51:31.439Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:31.439Z] Checked if tokens are valid: true, expires at: 1782805542476
+[debug] [2026-06-30T06:51:31.439Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/commit-ai-vibe/sites/commit-ai-vibe [none]
+[debug] [2026-06-30T06:51:36.231Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/commit-ai-vibe/sites/commit-ai-vibe 200
+[debug] [2026-06-30T06:51:36.231Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/commit-ai-vibe/sites/commit-ai-vibe {"name":"projects/commit-ai-vibe/sites/commit-ai-vibe","defaultUrl":"https://commit-ai-vibe.web.app","appId":"1:82901522745:web:2e46525ae45eb62f5a70e8","type":"DEFAULT_SITE"}
+[info] ▲ Next.js 16.2.9 (Turbopack)
+
+[info] - Environments: .env.local
+
+
+[info]   Creating an optimized production build ...
+
+[info] ✓ Compiled successfully in 17.4s
+
+[info]   Running TypeScript ...
+
+[info] Failed to type check.
+
+
+[info] ./functions/src/genkit-sample.ts:1:25
+Type error: Cannot find module 'genkit' or its corresponding type declarations.
+
+> 1 | import {genkit, z} from "genkit";
+    |                         ^
+  2 | import {googleAI} from "@genkit-ai/google-genai";
+  3 |
+  4 | // Cloud Functions for Firebase supports Genkit natively. The onCallGenkit function creates...
+
+[info] Next.js build worker exited with code: 1 and signal: null
+
+[debug] [2026-06-30T06:52:51.024Z] Error: ENOENT: no such file or directory, open 'D:\BABU\Commit AI\commit-ai\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.

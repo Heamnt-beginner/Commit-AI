@@ -1,0 +1,33 @@
+type User @table {
+  githubUsername: String!
+  email: String!
+  preferredCommitStyle: String
+}
+
+type Repository @table {
+  name: String!
+  remoteUrl: String!
+  owner: User!
+}
+
+type CommitDraft @table {
+  diffContent: String!
+  status: String!
+  suggestedMessage: String
+  refinementPrompt: String
+  repository: Repository!
+}
+
+type CommitHistory @table {
+  commitHash: String!
+  finalMessage: String!
+  modelUsed: String
+  tokensUsed: Int
+  repository: Repository!
+}
+
+type TeamPolicy @table {
+  policyName: String!
+  templateString: String!
+  repository: Repository!
+}

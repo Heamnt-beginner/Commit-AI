@@ -1,0 +1,23 @@
+mutation CreateRepository($name: String!, $remoteUrl: String!, $ownerId: UUID!) @auth(level: USER) {
+  repository_insert(data: { name: $name, remoteUrl: $remoteUrl, ownerId: $ownerId })
+}
+
+mutation CreateCommitDraft($diffContent: String!, $status: String!, $repositoryId: UUID!) @auth(level: USER) {
+  commitDraft_insert(data: { diffContent: $diffContent, status: $status, repositoryId: $repositoryId })
+}
+
+query GetUserRepositories($ownerId: UUID!) @auth(level: USER) {
+  repositories(where: { ownerId: { eq: $ownerId } }) {
+    id
+    name
+    remoteUrl
+  }
+}
+
+query ListCommitHistory($repositoryId: UUID!) @auth(level: USER) {
+  commitHistories(where: { repositoryId: { eq: $repositoryId } }, orderBy: [{ commitHash: DESC }]) {
+    commitHash
+    finalMessage
+    tokensUsed
+  }
+}
